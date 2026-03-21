@@ -43,7 +43,7 @@ function Home() {
       request?.status === "Approved" &&
       !localStorage.getItem("requestApprovedShown")
     ) {
-      alert("🎉 Your room request has been approved!");
+      alert("🎉 Your request for room has been approved!");
 
       localStorage.setItem("requestApprovedShown", "true");
     }

@@ -83,35 +83,67 @@ function Rooms() {
       )}
 
       {/* 👨‍🎓 STUDENT VIEW */}
-      {!loading && student?.role === "student" && (
-        <div className="max-w-md">
+      {/* 👨‍🎓 STUDENT VIEW */}
+{!loading && student?.role === "student" && (
+  <div className="max-w-md">
 
-          {student?.room ? (
-            <div className="bg-[#0f172a]/70 backdrop-blur-lg border border-white/10 rounded-xl p-6 shadow-lg">
+    {student?.room ? (
+      <div className="bg-[#0f172a]/70 backdrop-blur-lg border border-white/10 rounded-xl p-6 shadow-lg">
 
-              <h2 className="text-2xl font-semibold mb-3 text-white">
-                Room {student.room.roomNumber}
-              </h2>
+        <h2 className="text-2xl font-semibold mb-3 text-white">
+          Room {student.room.roomNumber}
+        </h2>
 
-              <div className="text-gray-400 space-y-1 text-sm">
-                <p>Floor: {student.room.floor}</p>
-                <p>Capacity: {student.room.capacity}</p>
-              </div>
+        <div className="text-gray-400 space-y-1 text-sm">
+          <p>Floor: {student.room.floor}</p>
+          <p>Capacity: {student.room.capacity}</p>
+        </div>
 
-              <span className="inline-block mt-4 px-3 py-1 text-xs font-medium rounded-full 
-                bg-green-500/20 text-green-400 border border-green-500/30">
-                Assigned
-              </span>
+        <span className="inline-block mt-4 px-3 py-1 text-xs font-medium rounded-full 
+          bg-green-500/20 text-green-400 border border-green-500/30">
+          Assigned
+        </span>
 
+        {/* 👥 ROOMMATES SECTION */}
+        <div className="mt-6">
+          <h3 className="text-sm font-semibold text-gray-300 mb-2">
+            Roommates
+          </h3>
+
+          {student.room.occupants?.length > 1 ? (
+            <div className="space-y-2">
+              {student.room.occupants
+                .filter((mate) => mate._id !== student._id)
+                .map((mate) => (
+                  <div
+                    key={mate._id}
+                    className="flex justify-between items-center bg-[#020617] px-3 py-2 rounded-lg border border-white/10"
+                  >
+                    <span className="text-gray-300 text-sm">
+                      {mate.name}
+                    </span>
+                    <span className="text-xs text-gray-500">
+                      {mate.email}
+                    </span>
+                  </div>
+                ))}
             </div>
           ) : (
-            <div className="text-gray-400 bg-[#0f172a] border border-white/10 p-6 rounded-xl">
-              No room assigned
-            </div>
+            <p className="text-gray-500 text-sm">
+              No roommates assigned
+            </p>
           )}
-
         </div>
-      )}
+
+      </div>
+    ) : (
+      <div className="text-gray-400 bg-[#0f172a] border border-white/10 p-6 rounded-xl">
+        No room assigned
+      </div>
+    )}
+
+  </div>
+)}
 
     </div>
   );

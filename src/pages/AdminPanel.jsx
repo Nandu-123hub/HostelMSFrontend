@@ -105,6 +105,7 @@ function AdminPanel() {
       setFeeStudentId("");
       setAmount("");
       setDueDate("");
+      alert("Fee created Successsfully")
     } catch (error) {
       console.error(error);
     }
