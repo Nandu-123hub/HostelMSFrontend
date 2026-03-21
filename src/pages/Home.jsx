@@ -44,7 +44,7 @@ function Home() {
       !localStorage.getItem("requestApprovedShown")
     ) {
       alert("🎉 Your request for room has been approved!");
-
+      navigate('/fees')
       localStorage.setItem("requestApprovedShown", "true");
     }
   }, [request]);
