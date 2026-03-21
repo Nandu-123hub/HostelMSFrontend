@@ -44,7 +44,6 @@ function Home() {
       !localStorage.getItem("requestApprovedShown")
     ) {
       alert("🎉 Your request for room has been approved!");
-      navigate('/fees')
       localStorage.setItem("requestApprovedShown", "true");
     }
   }, [request]);
@@ -62,7 +61,7 @@ function Home() {
   const handleRequestRoom = async () => {
     try {
       const token = await getToken();
-
+      
       await API.post(
         "/requests",
         {},
@@ -79,7 +78,7 @@ function Home() {
       localStorage.removeItem("requestApprovedShown");
 
       fetchUser(); // refresh
-
+      navigate('/fees')
     } catch (error) {
       console.error(error);
       alert("Request failed");
