@@ -89,10 +89,10 @@ function Home() {
     <div className="flex flex-col items-center justify-center text-center">
 
       <img
-        src={hostelImage}
-        alt="Hostel"
-        className="w-full h-auto object-cover rounded-lg shadow-md mb-8"
-      />
+  src={hostelImage}
+  alt="Hostel"
+  className="w-full h-auto rounded-lg shadow-md mb-8"
+/>
 
       <h1 className="text-4xl font-bold mb-4 text-white">
         Hostel Management System
