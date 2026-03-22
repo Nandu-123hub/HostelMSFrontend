@@ -44,8 +44,8 @@ function Footer() {
 
       {/* 🔻 BOTTOM */}
       <div className="border-t border-white/10 text-center py-4 text-gray-500 text-sm">
-        © {new Date().getFullYear()} 
-        <span className="text-purple-400 font-medium"> HostelMS</span>. All rights reserved.
+      
+        <span className="text-purple-400 font-medium"> HostelMS</span>. By Nandu Rajiv U
       </div>
 
     </footer>
