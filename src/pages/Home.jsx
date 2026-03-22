@@ -91,7 +91,7 @@ function Home() {
       <img
         src={hostelImage}
         alt="Hostel"
-        className="w-full max-h-[400px] object-cover rounded-lg shadow-md mb-8"
+        className="w-full h-auto object-cover rounded-lg shadow-md mb-8"
       />
 
       <h1 className="text-4xl font-bold mb-4 text-white">
